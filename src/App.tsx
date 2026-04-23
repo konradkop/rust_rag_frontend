@@ -111,7 +111,7 @@ export default function App() {
 
     try {
       const res = await fetch(
-        `http://3.82.9.217:8000/query?q=${encodeURIComponent(text)}`
+        `https://api.rust-rag.com/query?q=${encodeURIComponent(text)}`
       );
 
       const data = await res.json();
