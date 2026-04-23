@@ -1,0 +1,181 @@
+/* styles.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0f0f10;
+  color: #f3f4f6;
+}
+
+/* --- App background --- */
+.app-bg {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a120f, #0f0f10 60%);
+}
+
+/* --- Chat container --- */
+.chat-card {
+  width: 1000px;
+  height: 800px;
+  background: #161616;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 122, 24, 0.12);
+}
+
+/* --- Header --- */
+.chat-header {
+  padding: 14px;
+  font-weight: 600;
+  background: #1b1b1b;
+  border-bottom: 1px solid rgba(255, 122, 24, 0.15);
+}
+
+.title {
+  font-size: 14px;
+  color: #ffb089;
+}
+
+/* --- Chat area --- */
+.chat-box {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #121212;
+}
+
+/* --- Message bubbles --- */
+.bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* User messages (Rust orange gradient) */
+.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #d9480f, #ff7a18);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+/* Bot messages (dark rust panel) */
+.bot {
+  align-self: flex-start;
+  background: #1f1a18;
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 122, 24, 0.12);
+  border-bottom-left-radius: 6px;
+}
+
+/* --- Loading spinner --- */
+.loading-bubble {
+  width: fit-content;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top: 2px solid #ff7a18;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Input area --- */
+.input-area {
+  display: flex;
+  padding: 12px;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 122, 24, 0.15);
+  background: #1a1a1a;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 122, 24, 0.15);
+  outline: none;
+  background: #121212;
+  color: #f3f4f6;
+}
+
+.input-area input:focus {
+  border-color: #ff7a18;
+}
+
+/* --- Button --- */
+.input-area button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #d9480f;
+  color: white;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.input-area button:hover {
+  background: #ff7a18;
+}
+
+.input-area button:disabled,
+.input-area input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Sources --- */
+.sources-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.source-badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 122, 24, 0.1);
+  color: #ffb089;
+  text-decoration: none;
+  border: 1px solid rgba(255, 122, 24, 0.25);
+  transition: 0.15s;
+}
+
+.source-badge:hover {
+  background: rgba(255, 122, 24, 0.2);
+  border-color: rgba(255, 122, 24, 0.4);
+}
+
+
+.bot-icon {
+  width: 150px;
+  height: 100px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
